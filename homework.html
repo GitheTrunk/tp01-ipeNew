@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HomeWork</title>
+</head>
+<body class="bg-white text-black flex items-center justify-center h-screen flex-col">
+    <h1 class="text-4xl font-bold">Sengleang</h1>
+    <h2 id="txtChange" class="my-4">You're just changed the message</h2>
+    <div class="flex gap-4">
+        <button id="btnChange" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Change Message</button>
+        <button id="btnshow" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Show Surprise</button>
+        <button id="btnmode" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Toggle mode</button>
+    </div>
+    <h2 id="Surprise" class="text-center mt-8 hidden">🎉🎁✨ Surprise! You're doing great!</h2>
+    <script>
+        var txtChange = document.getElementById("txtChange");
+        var btnChange = document.getElementById("btnChange");
+        var btnshow = document.getElementById("btnshow");
+        var btnmode = document.getElementById("btnmode");
+        var surprise = document.getElementById("Surprise");
+        var body = document.body;
+        var isDarkMode = false;
+
+        btnChange.addEventListener("click", function() {
+            txtChange.textContent = txtChange.textContent === "Welcome to my web-page" 
+                ? "You're just changed the message" 
+                : "Welcome to my web-page";
+        });
+
+        btnshow.addEventListener("click", function() {
+            surprise.classList.toggle("hidden");
+        });
+
+        btnmode.addEventListener("click", function() {
+            body.classList.toggle("bg-black");
+            body.classList.toggle("bg-white");
+            body.classList.toggle("text-white");
+            body.classList.toggle("text-black");
+            isDarkMode = !isDarkMode;
+        });
+    </script>
+</body>
+</html>
